@@ -1,4 +1,6 @@
-FROM python:alpine3.18
+FROM python:3.9.16-alpine
+
+RUN apk update && apk add git
 
 WORKDIR /app
 
