@@ -49,7 +49,10 @@ class GithubBackup:
             return
 
         logger.info(f"Cloning {repo.name}")
-        subprocess.check_output(f"git clone https://{self.username}:{self.access_token}@github.com/{self.username}/{repo.name} \
-                                {self.tmpdir}/{repo.name}",
-                                stderr=subprocess.STDOUT,
-                                shell=True)
+        try:
+            subprocess.check_output(f"git clone https://{self.username}:{self.access_token}@github.com/{self.username}/{repo.name} \
+                                    {self.tmpdir}/{repo.name}",
+                                    stderr=subprocess.STDOUT,
+                                    shell=True)
+        except subprocess.CalledProcessError as e:
+            logger.error(e.output)
