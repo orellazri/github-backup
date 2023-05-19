@@ -6,6 +6,8 @@ Easily back up your GitHub repositories to a compressed tar file
 
 </div>
 
+[![Push Image](https://github.com/orellazri/github-backup/actions/workflows/docker-image.yml/badge.svg)](https://github.com/orellazri/github-backup/actions/workflows/docker-image.yml)
+
 ## Running
 
 ### Running with Docker (Recommended)
