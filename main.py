@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-from GithubBackup import GithubBackup
+from github_backup import GithubBackup
 from utils import create_logger
 
 if __name__ == "__main__":
