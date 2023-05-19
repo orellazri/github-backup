@@ -19,6 +19,7 @@ docker run --rm \
     -e GITHUB_USERNAME="..." \
     -e GITHUB_ACCESS_TOKEN="..." \
     -e ... \
+    -v $(pwd):/backups \
     reaperberri/github-backup
 ```
 
@@ -29,16 +30,16 @@ Clone the repository and run:
 ```bash
 pip3 install -r requirements.txt
 # export environment variables here like so:
-# GITHUB_USERNAME=...
+# DESTINATION_DIR=...
 python3 main.py
 ```
 
 ## Environment Variables
 
-| Name                | Description                                                                        | Example       |
-| ------------------- | ---------------------------------------------------------------------------------- | ------------- |
-| GITHUB_USERNAME     | Your GitHub username                                                               | orellazri     |
-| GITHUB_ACCESS_TOKEN | Your personal access token                                                         | ...           |
-| DESTINATION_DIR     | (Optional) Directory to put the archived file into - defaults to current directory | /home/backups |
-| EXCLUDE_REPOS_LIST  | (Optional) Comma-separated list of repositories to exclude                         | repo1,repo2   |
-| EXCLUDE_FORKS       | (Optional) Whether to ignore forks you made                                        | True          |
+| Name                | Description                                                                                                                          | Example     |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
+| GITHUB_USERNAME     | Your GitHub username                                                                                                                 | orellazri   |
+| GITHUB_ACCESS_TOKEN | Your personal access token                                                                                                           | ...         |
+| EXCLUDE_REPOS_LIST  | (Optional) Comma-separated list of repositories to exclude                                                                           | repo1,repo2 |
+| EXCLUDE_FORKS       | (Optional) Whether to ignore forks you made                                                                                          | True        |
+| DESTINATION_DIR     | (Optional) Directory to put the archived file into - defaults to current directory. Should only use if not running with a container! | /backups    |

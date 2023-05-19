@@ -19,9 +19,11 @@ if __name__ == "__main__":
         logger.error("You must provide a GITHUB_ACCESS_TOKEN environment variable!")
         exit(1)
 
-    destination_dir = os.getenv("DESTINATION_DIR", ".")
+    destination_dir = os.getenv("DESTINATION_DIR", "/backups")
     destination_dir = Path(destination_dir)
-    destination_dir.mkdir(parents=True, exist_ok=True)
+    if not destination_dir.exists():
+        logger.error("Destination directory does not exist!")
+        exit(1)
 
     exclude_repos_list = os.getenv("EXCLUDE_REPOS_LIST", "").split(",")
     exclude_forks = os.getenv("EXCLUDE_FORKS", "False") != "False"

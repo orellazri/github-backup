@@ -2,6 +2,8 @@ FROM python:3.9.16-alpine
 
 RUN apk update && apk add git
 
+RUN mkdir /backups
+
 WORKDIR /app
 
 COPY requirements.txt .
