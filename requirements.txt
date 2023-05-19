@@ -1,0 +1,2 @@
+urllib3==1.26.6
+PyGithub==1.58.2
