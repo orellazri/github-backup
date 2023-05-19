@@ -19,10 +19,7 @@ if __name__ == "__main__":
         logger.error("You must provide a GITHUB_ACCESS_TOKEN environment variable!")
         exit(1)
 
-    destination_dir = os.getenv("DESTINATION_DIR", "")
-    if destination_dir == "":
-        logger.error("You must provide a DESTINATION_DIR environment variable!")
-        exit(1)
+    destination_dir = os.getenv("DESTINATION_DIR", ".")
     destination_dir = Path(destination_dir)
     destination_dir.mkdir(parents=True, exist_ok=True)
 
