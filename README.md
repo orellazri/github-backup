@@ -36,10 +36,10 @@ python3 main.py
 
 ## Environment Variables
 
-| Name                | Description                                                                                                                          | Example     |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
-| GITHUB_USERNAME     | Your GitHub username                                                                                                                 | orellazri   |
-| GITHUB_ACCESS_TOKEN | Your personal access token                                                                                                           | ...         |
-| EXCLUDE_REPOS_LIST  | (Optional) Comma-separated list of repositories to exclude                                                                           | repo1,repo2 |
-| EXCLUDE_FORKS       | (Optional) Whether to ignore forks you made                                                                                          | True        |
-| DESTINATION_DIR     | (Optional) Directory to put the archived file into - defaults to current directory. Should only use if not running with a container! | /backups    |
+| Name                | Description                                                                                                  | Example     |
+| ------------------- | ------------------------------------------------------------------------------------------------------------ | ----------- |
+| GITHUB_USERNAME     | Your GitHub username                                                                                         | orellazri   |
+| GITHUB_ACCESS_TOKEN | Your personal access token                                                                                   | ...         |
+| EXCLUDE_REPOS_LIST  | (Optional) Comma-separated list of repositories to exclude                                                   | repo1,repo2 |
+| EXCLUDE_FORKS       | (Optional) Whether to ignore forks you made                                                                  | True        |
+| DESTINATION_DIR     | (Optional) Directory to put the archived file into. **Should only use if not running within a container!**   | /backups    |
