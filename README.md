@@ -30,7 +30,7 @@ Clone the repository and run:
 ```bash
 pip3 install -r requirements.txt
 # export environment variables here like so:
-# DESTINATION_DIR=...
+# export DESTINATION_DIR=...
 python3 main.py
 ```
 
