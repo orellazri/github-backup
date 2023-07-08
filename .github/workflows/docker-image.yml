@@ -1,4 +1,4 @@
-name: Push Image
+name: Build and Push Image
 
 on:
   push:
@@ -13,14 +13,14 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v3
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
       - name: Log in to Docker Hub
         uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Build Docker image
-        run: docker build . --file Dockerfile --tag reaperberri/github-backup
-
-      - name: Push Docker image
-        run: docker push reaperberri/github-backup
+      - name: Build and Push Docker image
+        run: docker buildx build --push --platform linux/amd64,linux/arm64/v8 --tag reaperberri/github-backup .

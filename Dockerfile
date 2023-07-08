@@ -1,6 +1,6 @@
 FROM python:3.9.16-alpine
 
-RUN apk update && apk add git
+RUN apk update && apk add git libffi-dev gcc libc-dev linux-headers
 
 RUN mkdir /backups
 
