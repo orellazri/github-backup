@@ -48,6 +48,10 @@ class GithubBackup:
             logger.info(f"Skipping {repo.name} since it's a fork")
             return
 
+        if repo.owner.login != self.username:
+            logger.info(f"Skipping {repo.name} since it's not owned by {self.username} (owner: {repo.owner.login})")
+            return
+
         logger.info(f"Cloning {repo.name}")
         try:
             subprocess.check_output(f"git clone https://{self.username}:{self.access_token}@github.com/{self.username}/{repo.name} \
