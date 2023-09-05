@@ -23,4 +23,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Build and Push Docker image
-        run: docker buildx build --push --platform linux/amd64,linux/arm64/v8 --tag reaperberri/github-backup .
+        run: docker buildx build --push --platform linux/amd64,linux/arm64/v8 --tag reaperberri/github-backup:latest --tag reaperberri/github-backup:${GITHUB_SHA::6} .
