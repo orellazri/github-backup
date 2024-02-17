@@ -34,7 +34,7 @@ class GithubBackup:
             pool.join()
 
             self.logger.info("Creating archive")
-            with tarfile.open(destination_dir / "github-backup.tar", "w:gz") as tar:
+            with tarfile.open(destination_dir / "github-backup.tar.gz", "w:gz") as tar:
                 tar.add(self.tmpdir, arcname="github-backup")
 
     def clone_repo(self, repo):
